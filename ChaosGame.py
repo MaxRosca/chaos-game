@@ -8,7 +8,7 @@ displayHeight = 700
 pygame.init()
 
 display = pygame.display.set_mode((displayWidth, displayHeight))
-#pygame.display.toggle_fullscreen = True
+pygame.display.toggle_fullscreen = True
 
 info = pygame.display.Info()
 startPoints = []
@@ -32,20 +32,12 @@ for i in range(corners):
     if a2 < m2:
         m2 = a2
 
-#startPoints.append([600, 101])
-#startPoints.append([1000, 305])
-#startPoints.append([300, 500])
-#points.append([700, 200])
-
 h = b2 - m2
 h2 = random.randrange(m2, b2)
-print(h, h2)
 rap = (h2 - m2)/h
-print(rap)
 w = b1 - m1
 w2 = m1 + w * rap/2
 w3 = b1 - w * rap/2
-print(w2, w3)
 points.append([random.randrange(round(w2), round(w3)), h2])
 
 while True:
